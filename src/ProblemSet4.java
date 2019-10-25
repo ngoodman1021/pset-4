@@ -74,9 +74,9 @@ public class ProblemSet4 {
             }
         }
 
-        String sumAsString = String.format("%,d", sum);
+        String sumString = String.format("%,d", sum);
 
-        System.out.println("\n" + sumAsString + ".");
+        System.out.println("\n" + sumString + ".");
 		}
 
     /*
@@ -97,15 +97,15 @@ public class ProblemSet4 {
             System.out.print("Positive interger: ");
             intergers = in .nextInt();
         }
-0
-        String intAsString = String.format("%d", intergers);
 
-        for (int i = intAsString.length(); i >= 0; i--) {
+        String intString = String.format("%d", intergers);
+
+        for (int i = intString.length(); i >= 0; i--) {
             if (i > 0 && i != 1) {
-                digits = intAsString.substring(i - 1, i);
+                digits = intString.substring(i - 1, i);
                 separate = separate + digits + ", ";
             } else if (i == 0) {
-                digits = intAsString.substring(i, i + 1);
+                digits = intString.substring(i, i + 1);
                 separate = separate + digits + ".";
             }
         }
@@ -122,20 +122,58 @@ public class ProblemSet4 {
      * digits in the integer.
      */
     
-    public void digits() {
+    	public void digits() {
+        int integer2;
+        int digit2;
+        int sum2 = 0;
+        System.out.print("\nPositive integer: ");
+        integer2 = in .nextInt();
 
+        while (intege2r <= 0) {
+            System.out.print("Positive integer: ");
+            integer2 = in .nextInt();
+        }
+
+        String intString2 = String.format("%d", integer);
+        char[] digitsArray = intString2.toCharArray();
+
+        for (int i = 0; i < intString2.length(); i++) {
+            if (digitsArray[i] % 2 == 1) {
+                intDigit = Character.getNumericValue(digitsArray[i]);
+                sum2 += intDigit;
+            }
+        }
+        System.out.println("\n" + sum2 + ".\n");
     }
-    
+
+
     /*
      * Exercise 4.
-     * 
+     *
      * Prompt the user to enter a series of non-negative integers. When the user
      * enters a negative integer, you can assume he or she is done entering values.
      * What is the average of the values entered?
      */
-    
-    public void average() {
 
+    public void average() {
+        ArrayList < Integer > arrayIntegers = new ArrayList < Integer > ();
+        int number;
+        int i = 0;
+        int sum3 = 0;
+        arrayIntegers.add(0);
+        while (arrayIntegers.get(i) >= 0) {
+            System.out.print("Non-negative integer: ");
+            number = in .nextInt();
+            arrayIntegers.add(number);
+            i++;
+        }
+
+        for (int j = 0; j < arrayIntegers.size() - 1; j++) {
+            sum3 += arrayIntegers.get(j);
+        }
+        int arraySize = arrayIntegers.size() - 2;
+        double average = (double) sum3 / (double) arraySize;
+        System.out.printf("\n%,.2f\n", average);
     }
     
     /*
