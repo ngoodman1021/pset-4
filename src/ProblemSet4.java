@@ -51,20 +51,69 @@ public class ProblemSet4 {
      * including the bounds themselves.
      */
     
-    public void sum() {
+		public void sum() {
+        int lower;
+        int upper;
+        int sum = 0;
 
-    }
-    
+        System.out.print("\nLower bound: ");
+        lower = in .nextInt();
+        System.out.print("Upper bound: ");
+        upper = in .nextInt();
+
+        while (lower > upper) {
+            System.out.print("Lower bound: ");
+            lower = in .nextInt();
+            System.out.print("Upper bound: ");
+            upper = in .nextInt();
+        }
+
+        for (int i = lower; i <= upper; i++) {
+            if (i % 2 == 0) {
+                sum += i;
+            }
+        }
+
+        String sumAsString = String.format("%,d", sum);
+
+        System.out.println("\n" + sumAsString + ".");
+		}
+
     /*
      * Exercise 2.
-     * 
+     *
      * Prompt the user to enter a positive integer. Print the digits of this integer
      * in reverse order.
      */
-    
-    public void reverse() {
 
-    }
+		public void reverse() {
+        int intergers;
+        String separate = "";
+        String digits = "";
+        System.out.print("\nPositive interger: ");
+        intergers = in .nextInt();
+
+        while (intergers <= 0) {
+            System.out.print("Positive interger: ");
+            intergers = in .nextInt();
+        }
+0
+        String intAsString = String.format("%d", intergers);
+
+        for (int i = intAsString.length(); i >= 0; i--) {
+            if (i > 0 && i != 1) {
+                digits = intAsString.substring(i - 1, i);
+                separate = separate + digits + ", ";
+            } else if (i == 0) {
+                digits = intAsString.substring(i, i + 1);
+                separate = separate + digits + ".";
+            }
+        }
+
+        System.out.println("\n" + separate);
+
+		}
+
     
     /*
      * Exercise 3.
