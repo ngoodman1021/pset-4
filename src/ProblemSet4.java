@@ -129,18 +129,18 @@ public class ProblemSet4 {
         System.out.print("\nPositive integer: ");
         integer2 = in .nextInt();
 
-        while (intege2r <= 0) {
+        while (integer2 <= 0) {
             System.out.print("Positive integer: ");
             integer2 = in .nextInt();
         }
 
-        String intString2 = String.format("%d", integer);
+        String intString2 = String.format("%d", integer2);
         char[] digitsArray = intString2.toCharArray();
 
         for (int i = 0; i < intString2.length(); i++) {
             if (digitsArray[i] % 2 == 1) {
-                intDigit = Character.getNumericValue(digitsArray[i]);
-                sum2 += intDigit;
+                double digit = Character.getNumericValue(digitsArray[i]);
+                sum2 += digit;
             }
         }
         System.out.println("\n" + sum2 + ".\n");
@@ -156,7 +156,7 @@ public class ProblemSet4 {
      */
 
     public void average() {
-        ArrayList < Integer > arrayIntegers = new ArrayList < Integer > ();
+        arrayList < Integer > arrayIntegers = new arrayList < Integer > ();
         int number;
         int i = 0;
         int sum3 = 0;
