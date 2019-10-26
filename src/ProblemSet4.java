@@ -51,11 +51,12 @@ public class ProblemSet4 {
      * including the bounds themselves.
      */
     
-		public void sum() {
+	public void sum() {
         int lower;
         int upper;
         int sum = 0;
-
+	// values
+		
         System.out.print("\nLower bound: ");
         lower = in .nextInt();
         System.out.print("Upper bound: ");
@@ -86,13 +87,14 @@ public class ProblemSet4 {
      * in reverse order.
      */
 
-		public void reverse() {
+	public void reverse() {
         int intergers;
         String separate = "";
         String digits = "";
         System.out.print("\nPositive interger: ");
         intergers = in .nextInt();
-
+	// values
+		
         while (intergers <= 0) {
             System.out.print("Positive interger: ");
             intergers = in .nextInt();
@@ -128,7 +130,8 @@ public class ProblemSet4 {
         int sum2 = 0;
         System.out.print("\nPositive integer: ");
         integer2 = in .nextInt();
-
+	// values
+		
         while (integer2 <= 0) {
             System.out.print("Positive integer: ");
             integer2 = in .nextInt();
@@ -155,12 +158,14 @@ public class ProblemSet4 {
      * What is the average of the values entered?
      */
 
-    public void average() {
+    	public void average() {
         arrayList < Integer > arrayIntegers = new arrayList < Integer > ();
         int number;
         int i = 0;
         int sum3 = 0;
         arrayIntegers.add(0);
+	// values
+		
         while (arrayIntegers.get(i) >= 0) {
             System.out.print("Non-negative integer: ");
             number = in .nextInt();
@@ -178,43 +183,133 @@ public class ProblemSet4 {
     
     /*
      * Exercise 5.
-     * 
+     *
      * Prompt the user to enter a non-negative integer. Is this number prime?
      */
-    
-    public void prime() {
 
+	public void prime() {
+        int tested;
+        boolean prime = true;
+        System.out.print("\nNon-negative integer: ");
+        tested = in .nextInt();
+
+        while (tested <= 0) {
+            System.out.print("Non-negative integer: ");
+            tested = in .nextInt();
+        }
+
+        for (int i = 2; i <= tested / 2; i++) {
+            if (tested % i == 0) {
+                prime = false;
+            }
+        }
+        if (prime) {
+            System.out.println("\nPrime.");
+        } else {
+            System.out.println("\nNot prime.");
+        }
     }
-    
+
     /*
      * Exercise 6.
-     * 
+     *
      * Prompt the user to enter a positive integer in the range [1, 92]. If the
      * integer the user enters is called n, what is the nth Fibonacci number?
      */
-    
-    public void fibonacci() {
 
+    	public void fibonacci() {
+        int fibonacciNumber;
+        System.out.print("\nPositive integer: ");
+        fibonacciNumber = in .nextInt();
+
+        while (fibonacciNumber <= 0 || fibonacciNumber > 92) {
+            System.out.print("Positive integer: ");
+            fibonacciNumber = in .nextInt();
+        }
+
+        long base1 = 0;
+        long base2 = 1;
+        long fibonacci = 0;
+
+        for (int i = 2; i <= fibonacciNumber; i++) {
+            fibonacci = base1 + base2;
+            base1 = base2;
+            base2 = fibonacci;
+        }
+        System.out.println("\n" + base2 + ".");
     }
-    
+
     /*
      * Exercise 7.
-     * 
+     *
      * Prompt the user to enter a positive integer. What are its factors?
      */
-    
-    public void factors() {
 
+    	public void factors() {
+        System.out.print("\nPositive integer: ");
+        int value = in .nextInt();
+
+        while (value <= 0) {
+            System.out.print("Positive integer: ");
+            value = in .nextInt();
+        }
+
+        System.out.print("\n");
+
+        for (int i = 1; i <= value / 2; i++) {
+            if (value % i == 0) {
+                if (i > value / i) {
+                    System.out.print(".\n\n");
+                    return;
+                } else {
+                    if (i == 1) {
+                        System.out.print(i + ", " + (value / i));
+                    } else {
+                        if (i != (value / i)) {
+                            System.out.print(", " + i + ", " + (value / i));
+                        } else {
+                            System.out.print(", " + i + ".\n\n");
+                            return;
+                        }
+                    }
+                }
+            }
+        }
     }
-    
+
     /*
      * Exercise 8.
-     * 
+     *
      * Prompt the user to enter an integer between 1 and 24 (inclusive). Print a Super
      * Mario-style half-pyramid of the specified height.
      */
-    
-    public void mario() {        
+
+    	public void mario() {
+        System.out.print("Height: ");
+        int height = in .nextInt();
+
+        while (height < 1 || height > 24) {
+            System.out.print("Height: ");
+            height = in .nextInt();
+        }
+
+        System.out.print("\n");
+
+        String output = "";
+        int h = height;
+        String s = " ";
+        String t = "#";
+
+        for (int i = 0; i < h; i++) {
+            for (int j = 0; j < h - (i + 1); j++) {
+                output = output + s;
+            }
+            for (int k = 0; k < i + 2; k++) {
+                output = output + t;
+            }
+            output = output + '\n';
+        }
+        System.out.print(output);
 
     }
     
