@@ -315,23 +315,84 @@ public class ProblemSet4 {
     
     /*
      * Exercise 9.
-     * 
+     *
      * Prompt the user to enter an odd integer between 1 and 24 (inclusive). Print a
      * Super Mario-style full pyramid of the specified height.
      */
-    
-    public void luigi() {
 
+    	public void luigi() {
+        System.out.print("\nHeight: ");
+        int height = in .nextInt();
+
+        while (height < 1 || height > 24) {
+            System.out.print("Height: ");
+            height = in .nextInt();
+        }
+
+        System.out.print("\n");
+
+        String output = "";
+        int h = height;
+        String s = " ";
+        String t = "#";
+
+        for (int i = 0; i < h; i++) {
+            for (int j = 0; j < h - (i + 1); j++) {
+                output += s;
+            }
+            for (int j = 0; j <= i + 1; j++) {
+                output += t;
+            }
+            output += s;
+            output += s;
+            for (int j = 0; j <= i + 1; j++) {
+                output += t;
+            }
+            output += "\n";
+        }
+
+        System.out.print(output);
     }
-    
+
     /*
      * Exercise 10.
-     * 
+     *
      * Prompt the user to enter a credit card number (not a real one!). According to
      * Luhn's algorithm, is the credit card number valid?
      */
-    
-    public void credit() {
-        
+
+    	public void credit() { in .nextLine();
+        System.out.print("\nNumber: ");
+        String number = in .nextLine();
+        int sum2 = 0;
+        int multiply;
+        int finalSum = 0;
+
+        for (int i = number.length() - 2; i >= 0; i -= 2) {
+            multiply = Character.getNumericValue(number.charAt(i));
+            sum2 = multiply * 2;
+            if (sum2 >= 10) {
+                finalSum += (int)((sum2 / Math.pow(10, 0)) % 10) + (int)((sum2 / Math.pow(10, 1)) % 10);
+            } else {
+                finalSum += sum2;
+            }
+        }
+
+        for (int i = number.length() - 1; i >= 0; i -= 2) {
+            multiply = Character.getNumericValue(number.charAt(i));
+            finalSum += multiply;
+        }
+
+        String sum2 = Integer.toString(finalSum);
+        if (sum2.charAt(sum2.length() - 1) == '0') {
+            if (number.charAt(0) == '3' && (number.charAt(1) == '4' || number.charAt(1) == '7')) {
+                System.out.println("\nAmex.\n");
+            } else if (number.charAt(0) == '5' && (number.charAt(1) == '1' || number.charAt(1) == '2' || number.charAt(3) == '3' || number.charAt(4) == '4' || number.charAt(5) == '5')) {
+                System.out.println("\nMastercard.\n");
+            } else if (number.charAt(0) == '4') {
+                System.out.println("\nVisa.\n");
+            }
+        } else {
+            System.out.println("\nInvalid.\n");
+        }
     }
-}
