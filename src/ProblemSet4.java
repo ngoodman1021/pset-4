@@ -52,6 +52,7 @@ public class ProblemSet4 {
      */
     
 	public void sum() {
+		
         int lower;
         int upper;
         int sum = 0;
@@ -91,9 +92,11 @@ public class ProblemSet4 {
      */
 
 	public void reverse() {
+		
         int intergers;
         String separate = "";
         String digits = "";
+		
         System.out.print("\nPositive interger: ");
         intergers = in .nextInt();
 	// determines the values in order to place them in reverse
@@ -129,9 +132,11 @@ public class ProblemSet4 {
      */
     
     	public void digits() {
+		
         int integer2;
         int digit2;
         int sum2 = 0;
+		
         System.out.print("\nPositive integer: ");
         integer2 = in .nextInt();
 	// deteremines the values of the prompt
@@ -165,6 +170,7 @@ public class ProblemSet4 {
      */
 
     	public void average() {
+		
         System.out.print("\n");
         int number = 0;
         double sum3 = 0;
@@ -191,8 +197,10 @@ public class ProblemSet4 {
      */
 
 	public void prime() {
+		
         int tested;
         boolean prime = true;
+		
         System.out.print("\nNon-negative integer: ");
         tested = in .nextInt();
 	// determines the values
@@ -224,6 +232,7 @@ public class ProblemSet4 {
      */
 
     	public void fibonacci() {
+		
         int fibonacciNumber;
         System.out.print("\nPositive integer: ");
         fibonacciNumber = in .nextInt();
@@ -255,6 +264,7 @@ public class ProblemSet4 {
      */
 
     	public void factors() {
+		
         System.out.print("\nPositive integer: ");
         int value = in .nextInt();
 	//prompts to ask for the values
@@ -297,6 +307,7 @@ public class ProblemSet4 {
      */
 
     	public void mario() {
+		
         System.out.print("\nHeight: ");
         int height = in .nextInt();
 	// prompts for the user to enter the value
@@ -335,6 +346,7 @@ public class ProblemSet4 {
      */
 
     	public void luigi() {
+		
         System.out.print("\nHeight: ");
         int height = in .nextInt();
 	// prompts for the user to enter the value
@@ -379,12 +391,15 @@ public class ProblemSet4 {
      */
 
     	public void credit() { 
+		
 	System.out.print("\nNumber: ");
         long card = in .nextLong();
+		
         int length = String.valueOf(card).length();
         int array[] = new int[length];
         int odd[] = new int[(length / 2)];
         int even[] = new int[(length / 2) + 1];
+		
         String twoDigits = (Long.toString(card)).substring(0, 2);
         String oneDigit = (Long.toString(card)).substring(0, 1);
 	// prompts the user to enter integer
