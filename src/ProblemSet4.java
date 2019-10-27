@@ -55,30 +55,33 @@ public class ProblemSet4 {
         int lower;
         int upper;
         int sum = 0;
-	// values
+	// values to determine the lower and upper bound
 		
         System.out.print("\nLower bound: ");
         lower = in .nextInt();
         System.out.print("Upper bound: ");
         upper = in .nextInt();
-
+	// allows the user to enter the numbers into the prompt
+		
         while (lower > upper) {
             System.out.print("Lower bound: ");
             lower = in .nextInt();
             System.out.print("Upper bound: ");
             upper = in .nextInt();
         }
-
+	// confirms whether or not the user enters the correct numbers in their correct prompt
+		
         for (int i = lower; i <= upper; i++) {
             if (i % 2 == 0) {
                 sum += i;
             }
         }
+	// computes the sum of all even intergers
 
-        String sumString = String.format("%,d", sum);
-
-        System.out.println("\n" + sumString + ".");
-		}
+        	String sumString = String.format("%,d", sum);
+        	System.out.println("\n" + sumString + ".");
+		
+	}
 
     /*
      * Exercise 2.
@@ -93,12 +96,13 @@ public class ProblemSet4 {
         String digits = "";
         System.out.print("\nPositive interger: ");
         intergers = in .nextInt();
-	// values
+	// determines the values in order to place them in reverse
 		
         while (intergers <= 0) {
             System.out.print("Positive interger: ");
             intergers = in .nextInt();
         }
+	// confirms whether or not the value is positive
 
         String intString = String.format("%d", intergers);
 
@@ -112,9 +116,9 @@ public class ProblemSet4 {
             }
         }
 
-        System.out.println("\n" + separate);
-
-		}
+        	System.out.println("\n" + separate);
+	// prints the digits in reverse order
+	}
 
     
     /*
@@ -130,12 +134,13 @@ public class ProblemSet4 {
         int sum2 = 0;
         System.out.print("\nPositive integer: ");
         integer2 = in .nextInt();
-	// values
+	// deteremines the values of the prompt
 		
         while (integer2 <= 0) {
             System.out.print("Positive integer: ");
             integer2 = in .nextInt();
         }
+	// confirms whether or not the value is positive
 
         String intString2 = String.format("%d", integer2);
         char[] digitsArray = intString2.toCharArray();
@@ -146,7 +151,8 @@ public class ProblemSet4 {
                 sum2 += digit;
             }
         }
-        System.out.println("\n" + sum2 + ".\n");
+        	System.out.println("\n" + sum2 + ".\n");
+	// prints the sum of all of the ood digits in the integer
     }
 
 
@@ -159,26 +165,23 @@ public class ProblemSet4 {
      */
 
     	public void average() {
-        arrayList < Integer > arrayIntegers = new arrayList < Integer > ();
-        int number;
+        System.out.print("\n");
+        int number = 0;
+        double sum3 = 0;
         int i = 0;
-        int sum3 = 0;
-        arrayIntegers.add(0);
-	// values
-		
-        while (arrayIntegers.get(i) >= 0) {
-            System.out.print("Non-negative integer: ");
-            number = in .nextInt();
-            arrayIntegers.add(number);
-            i++;
-        }
+	//determines the values for the average values
 
-        for (int j = 0; j < arrayIntegers.size() - 1; j++) {
-            sum3 += arrayIntegers.get(j);
-        }
-        int arraySize = arrayIntegers.size() - 2;
-        double average = (double) sum3 / (double) arraySize;
-        System.out.printf("\n%,.2f\n", average);
+        do{
+           System.out.print("Non-negative integer: ");
+           number = in.nextInt();
+        	if(number>0){ 
+          	   sum3 = sum3 + number;
+          	   i++;
+        	}
+        }while(number>=0);
+        	double average = sum3 / i;
+        	System.out.printf("\n%,.2f.", average);
+	//prints he average of te values entered
     }
     
     /*
@@ -192,12 +195,14 @@ public class ProblemSet4 {
         boolean prime = true;
         System.out.print("\nNon-negative integer: ");
         tested = in .nextInt();
-
+	// determines the values
+		
         while (tested <= 0) {
             System.out.print("Non-negative integer: ");
             tested = in .nextInt();
         }
-
+	// confrims that the values are non-negatvive
+		
         for (int i = 2; i <= tested / 2; i++) {
             if (tested % i == 0) {
                 prime = false;
@@ -208,6 +213,7 @@ public class ProblemSet4 {
         } else {
             System.out.println("\nNot prime.");
         }
+		//prints whether or not th evalue is prime or not
     }
 
     /*
@@ -221,22 +227,25 @@ public class ProblemSet4 {
         int fibonacciNumber;
         System.out.print("\nPositive integer: ");
         fibonacciNumber = in .nextInt();
+	// determines the values of fibonacci
 
         while (fibonacciNumber <= 0 || fibonacciNumber > 92) {
             System.out.print("Positive integer: ");
             fibonacciNumber = in .nextInt();
-        }
-
+        } 
+	// confirms whether or not the integer is positive or not
         long base1 = 0;
         long base2 = 1;
         long fibonacci = 0;
-
+	// integers
+		
         for (int i = 2; i <= fibonacciNumber; i++) {
             fibonacci = base1 + base2;
             base1 = base2;
             base2 = fibonacci;
         }
         System.out.println("\n" + base2 + ".");
+	// prints the Fibonacci number
     }
 
     /*
@@ -248,14 +257,16 @@ public class ProblemSet4 {
     	public void factors() {
         System.out.print("\nPositive integer: ");
         int value = in .nextInt();
-
+	//prompts to ask for the values
+		
         while (value <= 0) {
             System.out.print("Positive integer: ");
             value = in .nextInt();
         }
-
+	// confirms whether or not the values are positive
+		
         System.out.print("\n");
-
+		
         for (int i = 1; i <= value / 2; i++) {
             if (value % i == 0) {
                 if (i > value / i) {
@@ -275,6 +286,7 @@ public class ProblemSet4 {
                 }
             }
         }
+	// prints th factors
     }
 
     /*
@@ -285,21 +297,23 @@ public class ProblemSet4 {
      */
 
     	public void mario() {
-        System.out.print("Height: ");
+        System.out.print("\nHeight: ");
         int height = in .nextInt();
-
+	// prompts for the user to enter the value
+		
         while (height < 1 || height > 24) {
             System.out.print("Height: ");
             height = in .nextInt();
         }
-
+	// confirms whether or not the nummber is between 1 and 24 but not including 1 and 24
         System.out.print("\n");
 
         String output = "";
         int h = height;
         String s = " ";
         String t = "#";
-
+	// values
+		
         for (int i = 0; i < h; i++) {
             for (int j = 0; j < h - (i + 1); j++) {
                 output = output + s;
@@ -310,7 +324,7 @@ public class ProblemSet4 {
             output = output + '\n';
         }
         System.out.print(output);
-
+	// prints out the mario styled half-pyramid of the specified height
     }
     
     /*
@@ -323,19 +337,21 @@ public class ProblemSet4 {
     	public void luigi() {
         System.out.print("\nHeight: ");
         int height = in .nextInt();
-
+	// prompts for the user to enter the value
+		
         while (height < 1 || height > 24) {
             System.out.print("Height: ");
             height = in .nextInt();
         }
-
         System.out.print("\n");
-
+	// confirms whether or not the nummber is between 1 and 24 but not including 1 and 24
+		
         String output = "";
         int h = height;
         String s = " ";
         String t = "#";
-
+	// values
+		
         for (int i = 0; i < h; i++) {
             for (int j = 0; j < h - (i + 1); j++) {
                 output += s;
@@ -352,6 +368,7 @@ public class ProblemSet4 {
         }
 
         System.out.print(output);
+	// prints out the mario styled pyramid of the specified height
     }
 
     /*
@@ -361,38 +378,77 @@ public class ProblemSet4 {
      * Luhn's algorithm, is the credit card number valid?
      */
 
-    	public void credit() { in .nextLine();
-        System.out.print("\nNumber: ");
-        String number = in .nextLine();
-        int sum2 = 0;
-        int multiply;
-        int finalSum = 0;
-
-        for (int i = number.length() - 2; i >= 0; i -= 2) {
-            multiply = Character.getNumericValue(number.charAt(i));
-            sum2 = multiply * 2;
-            if (sum2 >= 10) {
-                finalSum += (int)((sum2 / Math.pow(10, 0)) % 10) + (int)((sum2 / Math.pow(10, 1)) % 10);
-            } else {
-                finalSum += sum2;
+    	public void credit() { 
+	System.out.print("\nNumber: ");
+        long card = in .nextLong();
+        int length = String.valueOf(card).length();
+        int array[] = new int[length];
+        int odd[] = new int[(length / 2)];
+        int even[] = new int[(length / 2) + 1];
+        String twoDigits = (Long.toString(card)).substring(0, 2);
+        String oneDigit = (Long.toString(card)).substring(0, 1);
+	// prompts the user to enter integer
+	
+        for (int i = 0; i < length; i++) {
+            array[i] = Integer.valueOf((Long.toString(card)).substring(i, i + 1));
+        }
+		
+        int k = 0;
+        if ((length % 2) != 0) {
+            for (int j = 1; j < length; j += 2) {
+                odd[k] = array[j];
+                k++;
+            }
+        } else if ((length % 2) == 0) {
+            for (int j = length - 2; j > -1; j -= 2) {
+                odd[k] = array[j];
+                k++;
             }
         }
-
-        for (int i = number.length() - 1; i >= 0; i -= 2) {
-            multiply = Character.getNumericValue(number.charAt(i));
-            finalSum += multiply;
+	//make sure the credit card is valid according to Luhn's algorithm
+		
+        k = 0;
+        if ((length % 2) != 0) {
+            for (int j = 0; j < length; j += 2) {
+                even[k] = array[j];
+                k++;
+            }
+        } else if ((length % 2) == 0) {
+            for (int j = 1; j < length; j += 2) {
+                even[k] = array[j];
+                k++;
+            }
+        }
+	//make sure the credit card is valid according to Luhn's algorithm
+		
+        int multiply = 0;
+        int working = 0;
+	//values to mae sure that the credit card is working
+        
+	for (int l = 0; l < (length / 2); l++) {
+            working = (2 * odd[l]) % 10;
+            multiply += working;
+            working = ((2 * odd[l]) / 10) % 10;
+            multiply += working;
         }
 
-        String sum2 = Integer.toString(finalSum);
-        if (sum2.charAt(sum2.length() - 1) == '0') {
-            if (number.charAt(0) == '3' && (number.charAt(1) == '4' || number.charAt(1) == '7')) {
-                System.out.println("\nAmex.\n");
-            } else if (number.charAt(0) == '5' && (number.charAt(1) == '1' || number.charAt(1) == '2' || number.charAt(3) == '3' || number.charAt(4) == '4' || number.charAt(5) == '5')) {
-                System.out.println("\nMastercard.\n");
-            } else if (number.charAt(0) == '4') {
-                System.out.println("\nVisa.\n");
-            }
+        int sum4 = multiply;
+        for (int m = 0; m < (length / 2) + 1; m++) {
+            sum4 += even[m];
+        }
+	//response to mae sure that the credit card is vaild
+		
+        String lastDigit = (Integer.toString(sum4)).substring(1, 2);
+
+        if ((lastDigit.equals("0") && (twoDigits.equals("34") || twoDigits.equals("37"))) && length == 15) {
+            System.out.println("\nAmex.\n");
+        } else if (((lastDigit.equals("0")) && (twoDigits.equals("51") || twoDigits.equals("52") || twoDigits.equals("53") || twoDigits.equals("54") || twoDigits.equals("55"))) && length == 16) {
+            System.out.print("\nMastercard.\n");
+        } else if (((lastDigit.equals("0")) && (oneDigit.equals("4")) && (length == 13 || length == 16))) {
+            System.out.print("\nVisa.\n");
         } else {
-            System.out.println("\nInvalid.\n");
+            System.out.print("\nInvalid.\n");
+	//response to mae sure that the credit card is vaild
         }
     }
+}
